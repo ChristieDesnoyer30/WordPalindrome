@@ -6,8 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
         /*
-         *
-         *
          *A palindrome is a word, phrase, number, or other sequence of characters which reads the same backward or forward.
          *Allowances may be made for adjustments to capital letters, punctuation, and word dividers.
          *Famous examples in English include "A man, a plan, a canal, Panama!", "Amor, Roma", "race car", "stack cats",
@@ -29,9 +27,7 @@ public class Main {
         String word = scan.nextLine();
 
 
-        boolean palindrome = isWordAPalindrome(word);
-
-        if (palindrome == true) {
+        if (isWordAPalindrome(word)) {
 
             System.out.println(word + " is a palindrome!");
 
@@ -47,22 +43,11 @@ public class Main {
 
         String trimSpacesAndSpecialCharacters = userWord.replaceAll("[^a-zA-z0-9]", "");
 
-        boolean isPalindrome;
-
         StringBuilder sb = new StringBuilder(trimSpacesAndSpecialCharacters);
 
         sb.reverse();
 
-        if (trimSpacesAndSpecialCharacters.equalsIgnoreCase(sb.toString())) {
-
-            isPalindrome = true;
-
-        } else {
-
-            isPalindrome = false;
-        }
-
-        return isPalindrome;
+        return trimSpacesAndSpecialCharacters.equalsIgnoreCase(sb.toString());
 
 
     }
