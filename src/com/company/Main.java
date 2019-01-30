@@ -19,45 +19,51 @@ public class Main {
 *
 * */
 
+String word = "TacoCat";
 
-String checkPalindrome = isPalindrome("TacoCat");
+boolean palindrome = isPalindrome(word);
 
-        System.out.println(checkPalindrome);
+        if (palindrome == true){
+            
+
+        }
 
     }
 
 
 
+    public static boolean isPalindrome(String userWord){
 
-    public static String isPalindrome(String userWord){
-
+        boolean palindrome;
 
         String reverse = getPalindrome(userWord);
 
         if(reverse.equalsIgnoreCase(userWord)){
 
-            return reverse + " is a palindrome of " + userWord;
+             palindrome = true;
 
         } else{
 
-            return "Not a palindrome";
+             palindrome = false;
         }
 
+        return palindrome;
 
 
     }
 
 
 
-
-
     public static String getPalindrome(String userWord){
+
+
 
         String reverse = "";
 
         for(int i = userWord.length() - 1; i >= 0; i--)
         {
             reverse = reverse + userWord.charAt(i);
+
         }
 
         return reverse;
